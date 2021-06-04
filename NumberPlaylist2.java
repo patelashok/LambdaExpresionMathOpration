@@ -2,7 +2,7 @@ package com.bridgelabz;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
+import java.util.function.Predicate;
 
 
 public class NumberPlaylist2 {
@@ -12,10 +12,10 @@ public class NumberPlaylist2 {
         List<Integer> mylist2 = new ArrayList<Integer>();
         for (int i = 0; i < 5; i++) mylist2.add(i);
 
-        //Method6: implicit Lambda function to print double
-        Function<Integer, Double> toDoubleFunction = n -> n.doubleValue();
-        mylist2.forEach(n -> {
-            System.out.println("Meth6 for each lambda double Value::" + toDoubleFunction.apply(n));
+        //Method7: implicit Lambda function to check even
+        Predicate<Integer> isEvenFunction= n->n > 0 && n%2 ==0;
+        mylist2.forEach(n->{
+            System.out.println("Meth7 for each value of: " +n+ "check for Even: " + isEvenFunction.test(n));
         });
     }
 }
